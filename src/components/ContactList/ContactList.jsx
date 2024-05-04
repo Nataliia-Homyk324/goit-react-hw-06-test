@@ -1,34 +1,23 @@
-import Contact from '../Contact/Contact';
-import css from './ContactList.module.css';
-import { nanoid } from '@reduxjs/toolkit';
-import { useSelector } from 'react-redux';
-import { selectContacts, selectNameFilter } from '../../redux/selectors';
+import css from "./ContactList.module.css";
+import Contact from "../Contact/Contact";
+import { useSelector } from "react-redux";
+import { selectContacts } from "../../redux/contactsSlice";
+import { selectNameFilter } from "../../redux/filtersSlice";
 
 export default function ContactList() {
   const contacts = useSelector(selectContacts);
-  const search = useSelector(selectNameFilter);
+  const filter = useSelector(selectNameFilter);
 
-  const filterContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(search.trim().toLowerCase())
+  const visibleContacts = contacts.filter((contact) =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
   );
-
   return (
-    <>
-      {contacts.length !== 0 ? (
-        <ul className={css.listContacts}>
-          {filterContacts.map(contact => (
-            <li className={css.itemContact} key={nanoid()}>
-              <Contact data={contact} />
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p className={css.infoText}>Your phonebook is empty </p>
-      )}
-
-      {!filterContacts.length && contacts.length !== 0 && (
-        <p className={css.infoText}>No contacts found </p>
-      )}
-    </>
+    <ul className={css.list}>
+      {visibleContacts.map((contact) => (
+        <li key={contact.id} className={css.item}>
+          <Contact data={contact} />
+        </li>
+      ))}
+    </ul>
   );
 }

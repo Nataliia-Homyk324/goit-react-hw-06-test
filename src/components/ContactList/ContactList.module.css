@@ -1,22 +1,14 @@
-.listContacts {
+.list {
     display: flex;
+    gap: 20px;
+    list-style-type: none;
+    margin-left: 15px;
+    padding: 0;
     flex-wrap: wrap;
-    gap: 10px;
 }
-.itemContact {
-    flex-basis: calc((100% - 10px) / 2);
 
-    border-radius: 15px;
-    border: 1px solid #8E8F99;
-    background-color: #F6F6F6;
-
-    transition: transform .5s cubic-bezier(.4, 0, .2, 1);
-
+.item {
+    border: 1px solid black;
+    border-radius: 5px;
     padding: 10px;
-    overflow: hidden;
-}
-
-.itemContact:hover,
-.itemContact:focus {
-    transform: scale(1.05);
 }

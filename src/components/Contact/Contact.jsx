@@ -11,14 +11,16 @@ export default function Contact({ data: { id, name, number } }) {
   };
 
   return (
-    <div className={css.div}>
-      <p className={css.p}>
-        <FaUser /> {name}
-      </p>
-      <p className={css.p}>
-        <FaPhoneAlt /> {number}
-      </p>
-      <button className={css.btn} onClick={handleDelete}>
+    <div className={css.containerContac}>
+      <div className={css.thumbContact}>
+        <p className={css.nameContact}>
+          <FaUser /> {name}
+        </p>
+        <p className={css.nameContact}>
+          <FaPhoneAlt /> {number}
+        </p>
+      </div>
+      <button className={css.buttonDelete} onClick={handleDelete}>
         Delete
       </button>
     </div>

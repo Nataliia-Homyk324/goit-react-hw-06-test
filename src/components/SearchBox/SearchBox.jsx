@@ -9,9 +9,14 @@ export default function SearchBox() {
     dispatch(changeFilter(e.target.value));
   };
   return (
-    <div className={css.div}>
-      <p className={css.p}>Find contacts by name</p>
-      <input type="text" value={filter} onChange={handleFilterChange} />
+    <div className={css.container}>
+      <p className={css.inputText}>Find contacts by name</p>
+      <input
+        className={css.formInput}
+        type="text"
+        value={filter}
+        onChange={handleFilterChange}
+      />
     </div>
   );
 }

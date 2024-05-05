@@ -38,19 +38,31 @@ export default function ContactForm() {
       onSubmit={handleSubmit}
       validationSchema={FeedbackSchema}
     >
-      <Form className={css.form}>
-        <div className={css.field}>
+      <Form className={css.containerForm}>
+        <div className={css.thumb}>
           <label htmlFor={nameFieldId}>Name</label>
-          <Field type="text" name="name" id={nameFieldId} />
+          <Field
+            className={css.formInput}
+            type="text"
+            name="name"
+            id={nameFieldId}
+          />
           <ErrorMessage name="name" component="span" />
         </div>
 
-        <div className={css.field}>
+        <div className={css.thumb}>
           <label htmlFor={numberFieldId}>Number</label>
-          <Field type="text" name="number" id={numberFieldId} />
+          <Field
+            className={css.formInput}
+            type="text"
+            name="number"
+            id={numberFieldId}
+          />
           <ErrorMessage name="number" component="span" />
         </div>
-        <button type="submit">Add contact</button>
+        <button className={css.buttonAdd} type="submit">
+          Add contact
+        </button>
       </Form>
     </Formik>
   );

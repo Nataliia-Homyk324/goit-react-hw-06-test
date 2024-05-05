@@ -1,20 +1,42 @@
-.div {
-    position: relative;
-    width: 230px;
+
+.containerContac {
+    display: flex;
+   
+    justify-content: space-between;
+    align-items:center;
+    gap: 10px;
+   width: 300px;
+   padding-left: 20px;
+}
+
+.buttonDelete {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+
+    width: 100px;
+    border-radius: 60px;
+    background-color: #1d1d1d;
+    border: none;
+    color: #fff;
+    box-shadow: 0 4px 4px #00000026;
+    font-size: 15px;
+    transition: background-color .5s cubic-bezier(.4, 0, .2, 1), color .5s cubic-bezier(.4, 0, .2, 1);
+
+    padding: 10px 15px;
+}
+.thumbContact {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
+    white-space: nowrap;
+    overflow: hidden;
 }
+.nameContact {
+    
 
-.btn {
-    position: absolute;
-    right: 0;
-    top: 10px;
-    bottom: 0;
-    width: auto;
-    height: 25px;
-}
+    font-size: 18px;
+    font-weight: 700;
 
-.p {
-    margin: 0;
+    margin-bottom: 5px;
 }
